@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style type="text/css">
+            #root > img {
+                width: 1920px;
+                height: 1200px;
+                object-fit: cover;
+                position: absolute;
+            };
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            const imgDisplayTime = 10000;
+            const animationSpeed = 3000;
+
+            const replaceImg = () => {
+                const fadeOutImg = $('#root').children();
+                fadeOutImg.css('z-index', 1).fadeOut(animationSpeed).queue(() => {
+                    fadeOutImg.remove();
+                });
+
+                const fadeInImg = new Image();
+                fetch('https://source.unsplash.com/random')
+                    .then(res => {
+                        fadeInImg.src = res.url;
+                        $('#root').append(fadeInImg);
+                    });
+            };
+
+            setInterval(replaceImg, imgDisplayTime);
+        </script>
+    </head>
     <body>
-        <p class="codepen" data-height="393" data-theme-id="dark" data-default-tab="html" data-user="zieya" data-slug-hash="KKNRXjy" data-preview="true" style="height: 393px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="SlideshowUnsplash">
-            <span>See the Pen <a href="https://codepen.io/zieya/pen/KKNRXjy">
-            SlideshowUnsplash</a> by zieya (<a href="https://codepen.io/zieya">@zieya</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>    </body>
+        <div id="root"></div>
+    </body>
 </html>
