@@ -21,7 +21,7 @@
                 });
 
                 const fadeInImg = new Image();
-                fetch('https://source.unsplash.com/featured/?{Landscape},{City},{Natur},{Animal},{Cat},{Machine},{amazing},{flower},{Island},{Beach},{Ocean},{Sky},{Night Sky},{Stars}')
+                fetch('https://source.unsplash.com/featured/?{Landscape},{Natur},{Animal},{Cat},{Machine},{amazing},{flower},{Island},{Beach},{Ocean},{Sky},{Night Sky},{Stars}')
                     .then(res => {
                         fadeInImg.src = res.url;
                         $('#root').append(fadeInImg);
