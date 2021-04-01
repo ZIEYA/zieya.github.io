@@ -21,7 +21,7 @@
                 });
 
                 const fadeInImg = new Image();
-                fetch('https://source.unsplash.com/featured/?{Landscape},{Natur},{Bird},{Dog},{Cat},{Machine},{amazing},{flower},{Island},{Beach},{Ocean},{Sky},{Night Sky},{Stars}')
+                fetch('https://source.unsplash.com/featured/?{Landscape},{Natur},{Bird},{Dog},{Cat},{Machine},{amazing},{flower},{Island},{Ocean},{Sky},{Night Sky},{Stars}')
                     .then(res => {
                         fadeInImg.src = res.url;
                         $('#root').append(fadeInImg);
@@ -33,7 +33,7 @@
     </head>
     <body>
         <div id="root">
-            <img src="https://source.unsplash.com/featured/?{Landscape},{Natur},{Bird},{Dog},{Cat},{Machine},{amazing},{flower},{Island},{Beach},{Ocean},{Sky},{Night Sky},{Stars}" alt="">
+            <img src="https://source.unsplash.com/featured/?{Landscape},{Natur},{Bird},{Dog},{Cat},{Machine},{amazing},{flower},{Island},{Ocean},{Sky},{Night Sky},{Stars}" alt="">
         </div>
     </body>
 </html>
